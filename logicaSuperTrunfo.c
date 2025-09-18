@@ -11,7 +11,6 @@ int main() {
     char estado1;
     char codigo_carta1 [4];
     char nome_cidade1 [50];
-    char carta_vencedora [50];
     unsigned long int populacao1;
     float area1;
     float pib1;
@@ -156,16 +155,16 @@ int main() {
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-    if(poder1 > poder2){
-        carta_vencedora = Carta1;
-    }
-    else{
-        carta_vencedora = Carta2;
-    }
+    
 
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
-    printf("A cidade vencedora é %s",carta_vencedora);
+    if(poder1 > poder2){
+        printf("A cidade vencedora é : %s , Avaliado pela junção de todos os atributos \n", nome_cidade1);
+    }
+    else{
+        printf("A cidade vencedora é : %s , Avaliado pela junção de todos os atributos\n ", nome_cidade2);
 
+    }
     return 0;
 }
