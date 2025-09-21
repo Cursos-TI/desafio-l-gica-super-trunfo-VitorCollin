@@ -92,6 +92,100 @@ int main() {
     densidade_populacional2 = populacao2 / area2;
     pib_per_capita2 =  pib2 / populacao2;
 
+    // Menu interativo para escolha de qual atributo usar 
+
+    int escolha;
+
+    printf("Escolha qual atributo deseja utilizar para comparação\n");
+    printf("1: População \n");
+    printf("2: Área \n");
+    printf("3: PIB \n");
+    printf("4: Pontos Turisticos\n");
+    printf("5: Densidade Populacional \n");
+    printf("6: PIB per capita\n");
+    printf("Esolha: \n");
+    scanf("%d", &escolha);
+
+    switch (escolha)
+    {
+    case 1:
+        printf("##Comparando com base na População##\n");
+        printf("População da primeira carta: %lu \n" , populacao1);
+        printf("População da segunda carta: %lu \n", populacao2);
+
+        if(populacao1 > populacao2){
+        printf("Cidade 1 tem população maior \n");
+        }
+        else{
+        printf("Cidade 2 tem população maior \n");
+        }
+        break;
+    case 2:
+        printf("##Comparando com base na Área##\n");
+        printf("Área da primeira carta: %f \n", area1);
+        printf("Área da segunda carta: %f \n", area2);
+        if(area1 > area2){
+        printf("Cidade 1 tem área maior \n");
+        }
+        else{
+        printf("Cidade 2 tem área maior \n");
+        }
+        
+        break;
+    case 3:
+        printf("##Comparando com base no PIB##\n");
+        printf("PIB da primeira carta: %f \n", pib1);
+        printf("PIB da segunda carta: %f \n", pib2);
+        if(pib1 > pib2){
+        printf("Cidade 1 tem PIB maior \n");
+        }
+        else{
+        printf("Cidade 2 tem PIB maior \n");
+        }
+        
+        break;
+    case 4:
+        printf("##Comparando com base nos Pontos Turisticos##\n");
+        printf("Pontos Turisticos da primeira carta: %d \n", pontos_turisticos1);
+        printf("Pontos TUristicos da segunda carta: %d \n", pontos_turisticos2);
+        if(pontos_turisticos1 > pontos_turisticos2){
+        printf("Cidade 1 tem mais pontos turisticos  \n");
+        }
+        else{
+        printf("Cidade 2 tem mais pontos turisticos  \n");
+        }
+        
+        break;
+    case 5:
+        printf("##Comparando com base na densidade populacional##\n");
+        printf("Densidade populacional da primeira carta: %f \n", densidade_populacional1);
+        printf("Densidade populacional da segunda carta: %f \n", densidade_populacional2);
+        if(densidade_populacional1 < densidade_populacional2){
+        printf("Cidade 1 tem a densidade populacional maior \n");
+        }
+        else{
+        printf("Cidade 2 tem a densidade populacional maior \n");
+        }
+    
+        break;
+    case 6:
+        printf("##Comparando com base no PIB per capita##\n");
+        printf("PIB per capita da primeira carta: %f \n", pib_per_capita1);
+        printf("PIB per capita da segunda carta: %f \nB", pib_per_capita2);
+        if(pib_per_capita1 > pib_per_capita2){
+        printf("Cidade 1 tem o PIB per capita maior \n");
+        }
+        else{
+        printf("Cidade 2 tem o PIB per capita maior \n");
+        }
+    
+        break;
+    default:
+        printf("Opção Invalida\n ");
+        break;
+    }
+}
+
     // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
@@ -102,69 +196,11 @@ int main() {
     // } else {
     //     printf("Cidade 2 tem maior população.\n");
     // }
-    
-    if(populacao1 > populacao2){
-        printf("Cidade 1 tem população maior \n");
-    }
-    else{
-        printf("Cidade 2 tem população maior \n");
-    }
-
-    if(area1 > area2){
-        printf("Cidade 1 tem área maior \n");
-    }
-    else{
-        printf("Cidade 2 tem área maior \n");
-    }
-
-    if(pib1 > pib2){
-        printf("Cidade 1 tem PIB maior \n");
-    }
-    else{
-        printf("Cidade 2 tem PIB maior \n");
-    }
-
-    if(pontos_turisticos1 > pontos_turisticos2){
-        printf("Cidade 1 tem mais pontos turisticos \n");
-    }
-    else{
-        printf("Cidade 2 tem mais pontos turisticos \n");
-    }
-
-    if(densidade_populacional1 > densidade_populacional2){
-        printf("Cidade 1 tem uma densidade populacional maior \n");
-    }
-    else{
-        printf("Cidade 2 tem uma densidade populacional maior \n");
-    }
-
-    if(pib_per_capita1 > pib_per_capita2){
-        printf("Cidade 1 tem um PIB per capita maior \n");
-    }
-    else{
-        printf("Cidade 2 tem PIB per capita maior \n");
-    }
-
-
-    // Calculando o Super Poder
-
-    long double poder1 = (double) populacao1 + area1 + pib1 + pontos_turisticos1 + pib_per_capita1 + (1 / densidade_populacional1);
-    long double poder2 = (double) populacao2+ area2 + pib2 + pontos_turisticos2 + pib_per_capita2 + (1 / densidade_populacional2) ;
-
 
     // Exibição dos Resultados:
     // Após realizar as comparações, exiba os resultados para o usuário.
     // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-    
 
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
-    if(poder1 > poder2){
-        printf("A cidade vencedora é : %s , Avaliado pela junção de todos os atributos \n", nome_cidade1);
-    }
-    else{
-        printf("A cidade vencedora é : %s , Avaliado pela junção de todos os atributos\n ", nome_cidade2);
-
-    }
-    return 0;
-}
+  
